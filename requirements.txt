@@ -1,0 +1,8 @@
+# Para criar interfaces web simples e interativas com Python
+streamlit
+
+# Para enviar, baixar ou gerenciar arquivos no Azure Blob Storage
+azure-storage-blob
+
+# Para se conectar e fazer consultas em bancos de dados SQL Server
+pyodbc
