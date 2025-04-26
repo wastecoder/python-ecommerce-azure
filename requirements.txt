@@ -6,3 +6,6 @@ azure-storage-blob
 
 # Para se conectar e fazer consultas em bancos de dados SQL Server
 pyodbc
+
+# Para ler as variáveis do arquivo .env
+python-dotenv

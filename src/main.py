@@ -4,19 +4,22 @@ import pyodbc
 import uuid
 import json
 import os
-import pandas as pd
+from dotenv import load_dotenv
 
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
 
 # Configurações do Azure Storage
-CONNECTION_STRING = "DefaultEndpointsProtocol=https;[...];EndpointSuffix=core.windows.net"
-CONTAINER_NAME = "fotos"
-ACCOUNT_NAME = "stadevlab01ecommerce"
+CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+CONTAINER_NAME = os.getenv("AZURE_STORAGE_CONTAINER_NAME")
+ACCOUNT_NAME = os.getenv("AZURE_STORAGE_ACCOUNT_NAME")
 
 # Configurações do Azure SQL Server
-SQL_SERVER   = "dblab01.database.windows.net"
-SQL_DATABASE = "sqllab01ecommerce"
-SQL_USERNAME = "adminpaulinomendes01"
-SQL_PASSWORD = "0db7:5DH@n>N"
+SQL_SERVER = os.getenv("SQL_SERVER")
+SQL_DATABASE = os.getenv("SQL_DATABASE")
+SQL_USERNAME = os.getenv("SQL_USERNAME")
+SQL_PASSWORD = os.getenv("SQL_PASSWORD")
 
 
 # Título da aplicação

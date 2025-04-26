@@ -13,8 +13,8 @@ ecommerce-azure-python/
 │   └── create_table_produtos.sql
 ├── src/
 │   ├── main.py
-│   ├── .env
 │   └── .env.example
+├── .env
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
@@ -23,6 +23,7 @@ ecommerce-azure-python/
 
 * `sql/`: Contém scripts SQL para criação de tabelas.
 * `src/`: Contém o código fonte principal da aplicação Streamlit (`main.py`).
+* `.env`: Contém as variáveis de ambiente necessárias para acessar o Microsoft Azure.
 * `requirements.txt`: Lista das dependências necessárias para executar o projeto.
 
 
@@ -78,12 +79,15 @@ Para executar esta aplicação localmente, siga os passos abaixo:
     ```bash
     python -m venv .venv
     source .venv/bin/activate  # No Linux/macOS
-    .venv\Scripts\activate  # No Windows
+    .venv\Scripts\activate     # No Windows
     ```
 4.  **Configure as variáveis de ambiente:**
-    * Crie o arquivo `.env` na pasta `src/` e defina as seguintes variáveis com as suas credenciais do Azure:
+    * Crie o arquivo `.env` na raiz do projeto e defina as seguintes variáveis com as suas credenciais do Azure:
         ```
-        AZURE_STORAGE_CONNECTION_STRING="SUA_CONNECTION_STRING"
+        AZURE_STORAGE_CONNECTION_STRING="DefaultEndpointsProtocol=https;[...];EndpointSuffix=core.windows.net"
+        AZURE_STORAGE_CONTAINER_NAME="SEU_CONTAINER_FOTO"
+        AZURE_STORAGE_ACCOUNT_NAME="SEU_STORAGE_ACCOUNT"
+
         SQL_SERVER="SEU_SQL_SERVER.database.windows.net"
         SQL_DATABASE="SEU_SQL_DATABASE"
         SQL_USERNAME="SEU_SQL_USERNAME"
